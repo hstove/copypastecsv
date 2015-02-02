@@ -1,0 +1,24 @@
+- content_for(:title) { @paste.title }
+.row.text-center
+  .col-md-12
+    %h1= @paste.title
+    %p.small.label.label-default
+      = time_ago_in_words @paste.created_at
+      ago
+%br
+
+.row
+  .col-md-12.text-center
+    .btn-group
+      = link_to 'Download .CSV', paste_path(@paste, format: 'csv'), class: 'btn btn-primary'
+      = link_to 'Download .XLS', paste_path(@paste, format: 'xls'), class: 'btn btn-success'
+%br
+
+.row
+  .col-md-10.col-md-offset-1
+    %table.table.table-bordered.table-striped
+      %tbody
+        - @paste.csv.each do |row|
+          %tr
+            - row.each do |col|
+              %td= col

@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
-gem "bootstrap-sass", "~> 3.1.0"
+gem "bootstrap-sass", '~> 3.3.3'
 gem "nested_form"
 gem "cancan"
 gem "filepicker-rails"
@@ -75,6 +75,7 @@ gem "bootswatch-rails"
 gem "nprogress-rails"
 gem "sidekiq"
 gem "activejob", require: "active_job"
+gem 'bootswatch-rails'
 group :test, :development do
   gem "rspec-rails"
   gem "factory_girl_rails"

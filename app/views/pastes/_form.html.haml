@@ -1,0 +1,19 @@
+= form_for @paste do |f|
+  - if @paste.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@paste.errors.count, "error")} prohibited this paste from being saved:"
+      %ul
+        - @paste.errors.full_messages.each do |msg|
+          %li= msg
+
+  .row
+    .col-md-8.col-md-offset-2
+      = f.text_field :title, class: 'form-control', placeholder: "Give it a title", autofocus: true
+  %br
+  .row
+    .col-md-8.col-md-offset-2
+      = f.text_area :body, class: 'form-control', placeholder: "Copy your CSV File here!"
+  %br
+  .actions.row
+    .col-md-12.text-center
+      = f.submit 'Save', class: 'btn btn-success'

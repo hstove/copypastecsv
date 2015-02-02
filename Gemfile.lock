@@ -51,6 +51,9 @@ GEM
       activerecord (>= 3.0)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (5.1.1)
+      execjs
+      json
     awesome_print (1.6.1)
     backbone-rails (1.1.2)
       rails (>= 3.0.0)
@@ -61,8 +64,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.1.1.1)
-      sass (~> 3.2)
+    bootstrap-sass (3.3.3)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     bootstrap-wysihtml5-rails (0.3.3.2)
       railties (>= 3.0)
     bootswatch-rails (3.2.4)
@@ -404,7 +408,7 @@ DEPENDENCIES
   backbone-rails
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 3.1.0)
+  bootstrap-sass (~> 3.3.3)
   bootstrap-wysihtml5-rails
   bootswatch-rails
   cancan
