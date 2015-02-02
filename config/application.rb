@@ -9,19 +9,19 @@ Bundler.require(*Rails.groups)
 module Csvbin
   class Application < Rails::Application
     config.autoload_paths << "#{config.root}/lib"
-ActiveJob::Base.queue_adapter = :sidekiq
+    ActiveJob::Base.queue_adapter = :sidekiq
 
-config.generators do |g|
-  g.template_engine :haml
-  g.test_framework :rspec
-end
+    config.generators do |g|
+      g.template_engine :haml
+      g.test_framework :rspec
+    end
 
-require 'open-uri'
-uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://localhost:6379")
-redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+    require 'open-uri'
+    uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://localhost:6379")
+    redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 
-config.redis = redis
-Split.redis = redis
+    config.redis = redis
+    Split.redis = redis
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
