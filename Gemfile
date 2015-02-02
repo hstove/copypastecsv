@@ -75,7 +75,6 @@ gem "bootswatch-rails"
 gem "nprogress-rails"
 gem "sidekiq"
 gem "activejob", require: "active_job"
-gem 'bootswatch-rails'
 group :test, :development do
   gem "rspec-rails"
   gem "factory_girl_rails"
