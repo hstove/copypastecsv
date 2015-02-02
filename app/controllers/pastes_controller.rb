@@ -11,7 +11,7 @@ class PastesController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.csv { send_data @paste.csv, filename: "#{@paste.title}.csv" }
+      format.csv { send_data @paste.to_csv, filename: "#{@paste.title}.csv" }
       format.xls { send_data @paste.xls, filename: "#{@paste.title}.xls"}
     end
   end
@@ -42,7 +42,7 @@ class PastesController < ApplicationController
 
   private
     def set_paste
-      @paste = Paste.find(params[:id])
+      @paste = Paste.find_by(uuid: params[:id])
     end
 
     def paste_params
