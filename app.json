@@ -6,5 +6,8 @@
     "success_url": "/",
     "addons": [
         "redistogo"
-    ]
+    ],
+    "scripts": {
+        "postdeploy": "bundle exec rake db:migrate"
+    }
 }
