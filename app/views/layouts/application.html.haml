@@ -22,5 +22,9 @@
     %footer
       .row.text-center
         %p
-          From
-          = link_to "Hank Stoever", "http://hankstoever.com", target: :_blank
+          - if ErrorsController === controller
+            Maybe go
+            = link_to "back?", root_path
+          - else
+            From
+            = link_to "Hank Stoever", "http://hankstoever.com", target: :_blank
