@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'errors/internal_error'
 
-  resources :pastes
+  resources :pastes, only: [:new, :create, :show]
 
   root 'pastes#new'
 
