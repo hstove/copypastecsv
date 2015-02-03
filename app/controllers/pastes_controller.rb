@@ -3,11 +3,6 @@ class PastesController < ApplicationController
 
   respond_to :html, :csv
 
-  def index
-    @pastes = Paste.all
-    respond_with(@pastes)
-  end
-
   def show
     respond_to do |format|
       format.html
@@ -21,22 +16,9 @@ class PastesController < ApplicationController
     respond_with(@paste)
   end
 
-  def edit
-  end
-
   def create
     @paste = Paste.new(paste_params)
     @paste.save
-    respond_with(@paste)
-  end
-
-  def update
-    @paste.update(paste_params)
-    respond_with(@paste)
-  end
-
-  def destroy
-    @paste.destroy
     respond_with(@paste)
   end
 
