@@ -17,12 +17,15 @@ module Csvbin
       g.test_framework :rspec
     end
 
-    require 'open-uri'
-    uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://localhost:6379")
-    redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+    config.exceptions_app = self.routes
 
-    config.redis = redis
-    Split.redis = redis
+
+    # require 'open-uri'
+    # uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://localhost:6379")
+    # redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+    #
+    # config.redis = redis
+    # Split.redis = redis
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
